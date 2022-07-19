@@ -36,6 +36,7 @@ lerna-debug.log*
 
 
 /nodejs/node_modules
-/download
+/download/mp3
+/download/m4a
 /client/node_modules
 /.vscode
