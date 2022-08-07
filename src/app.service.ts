@@ -12,9 +12,11 @@ export class AppService {
     //this.convertFile();
     return 'Hello World!';
   }
+
+  // OK mp3
   async convert(link: string) {
     // const output_dir = path.join(__dirname);
-
+    console.log(link);
     const stream = ytdl(link, {
       filter: 'audioonly',
     });
@@ -29,14 +31,21 @@ export class AppService {
         console.log(e);
       });
     //console.log(res);
+    console.log(title);
     ffmpeg.setFfmpegPath(ffmpegPath.path);
     ffmpeg.setFfprobePath(ffprobePath.path);
-    ffmpeg(stream)
-      .audioBitrate(320)
-      .save(`download/mp3/${title}.mp3`)
-      .on('end', () => {
-        console.log('Done! Downloaded');
-      });
+    console.log('set path');
+    try {
+      ffmpeg(stream)
+        .audioBitrate(320)
+        .save(`download/mp3/${title}.mp3`)
+        .on('end', () => {
+          console.log('Done! Downloaded');
+        })
+    } catch (error) {
+      console.log('catch error')
+      console.log(error);
+    }
 
     return title;
   }
@@ -90,6 +99,8 @@ export class AppService {
         console.log(e);
       });
   }
+
+  // m4a
 
   async transfer(link: string) {
     // const output_dir = path.join(__dirname);
