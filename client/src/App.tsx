@@ -5,6 +5,9 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+
+const PATH = 'http://localhost:3000'
+
 function App() {
   const [link, setLink] = useState('');
   const [postError, setPostError] = useState('');
@@ -13,7 +16,7 @@ function App() {
   };
   const handleSubmit = async (event: React.FormEvent): Promise<void> => {
     event.preventDefault();
-    const url = '/youtube';
+    const url = PATH + '/youtube';
     axios
       .post(url, {
         youtubelink: link,
