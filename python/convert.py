@@ -6,6 +6,10 @@ import os
 # windows 10
 # run pip install certifi
 # run /Applications/Python*/Install\ Certificates.command
+
+# file1 = open('myfile.txt', 'r')
+# Lines = file1.readlines()
+
 url = "https://www.youtube.com/watch?v=ShP6KqZVQtM"
 target_path = "./downloads"
 print("Start converting")
@@ -16,8 +20,8 @@ video = yt.streams.filter(only_audio=True).first()
 out_file = video.download(output_path=target_path)
 
 base, ext = os.path.splitext(out_file)
-new_file = base + '.mp3'
-os.rename(out_file, new_file)
+# new_file = base + '.m4a'
+# os.rename(out_file, new_file)
 
 print("target path = " + (new_file))
-print("mp3 has been successfully downloaded.")
+print("Audio has been successfully downloaded.")
