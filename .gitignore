@@ -40,3 +40,5 @@ lerna-debug.log*
 /download/m4a
 /client/node_modules
 /.vscode
+
+songs.txt
