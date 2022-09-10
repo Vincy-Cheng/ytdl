@@ -12,9 +12,6 @@ const ffprobePath = require('@ffprobe-installer/ffprobe').path;
 const ffmpeg = require('fluent-ffmpeg');
 const readline = require('readline');
 const { async } = require('rxjs');
-// console.log('ok')
-
-//console.log(res);
 
 (async function processLineByLine() {
     try {
@@ -35,15 +32,18 @@ const { async } = require('rxjs');
                     return response.player_response.videoDetails.title;
                 })
                 .then((t) => {
+                    const transTitle = t.replaceAll(/\\|\/|\:|\*|\?|\"|\<|\>|\|/g)
+                    console.log(transTitle)
                     ffmpeg.setFfmpegPath(ffmpegPath);
                     ffmpeg.setFfprobePath(ffprobePath);
                     ffmpeg(stream)
                         .audioBitrate(320)
-                        .save(`download/m4a/${t}.m4a`)
+                        .save(`download/m4a/${transTitle}.m4a`)
                         .on('end', () => {
                             console.log('Done! Downloaded');
-                        }).on('error', () => {
+                        }).on('error', (e) => {
                             console.log('error!!!!')
+                            console.log(e)
                         });
                 })
                 .catch((e) => {
