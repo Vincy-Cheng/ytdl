@@ -32,7 +32,7 @@ const { async } = require('rxjs');
                     return response.player_response.videoDetails.title;
                 })
                 .then((t) => {
-                    const transTitle = t.replaceAll(/\\|\/|\:|\*|\?|\"|\<|\>|\|/g)
+                    const transTitle = t.replaceAll(/\\|\/|\:|\*|\?|\"|\<|\>|\|/g,' ')
                     console.log(transTitle)
                     ffmpeg.setFfmpegPath(ffmpegPath);
                     ffmpeg.setFfprobePath(ffprobePath);
