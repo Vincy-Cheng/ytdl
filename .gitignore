@@ -4,6 +4,7 @@
 /node_modules
 javascript/node_modules
 python/Lib
+python/Scripts
 # Logs
 logs
 *.log
