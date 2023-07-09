@@ -1,7 +1,9 @@
 # compiled output
+/client
 /dist
 /node_modules
-
+javascript/node_modules
+python/Lib
 # Logs
 logs
 *.log
@@ -41,4 +43,3 @@ lerna-debug.log*
 /client/node_modules
 /.vscode
 
-songs.txt
