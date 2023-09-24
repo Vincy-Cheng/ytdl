@@ -1,10 +1,3 @@
-// import { Injectable } from '@nestjs/common';
-// import got from 'got';
-// // import * as fs from 'fs';
-// // import * as ytdl from 'ytdl-core';
-// import * as ffmpeg from 'fluent-ffmpeg';
-// import * as ffmpegPath from '@ffmpeg-installer/ffmpeg';
-// import * as ffprobePath from '@ffprobe-installer/ffprobe';
 const fs = require('fs');
 const ytdl = require('ytdl-core');
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
@@ -16,7 +9,7 @@ const readline = require('readline');
     try {
 
         const file = readline.createInterface({
-            input: fs.createReadStream('songs.txt'),
+            input: fs.createReadStream('../songs.txt'),
             output: process.stdout,
             terminal: false
         });

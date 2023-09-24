@@ -8,8 +8,9 @@ It included javascript and python version.
 It mainly used ytdl-core and ffmepg package to convert the video to audio. It is recommended to install NodeJS.
 
 ### Locally development
-1. Install packages with ```npm i```
-2. Compile the code ```node convert.js```
+1. ```cd javascript```
+2. Install packages with ```npm i```
+3. Compile the code ```node convert.js```
 
 
 ## Python

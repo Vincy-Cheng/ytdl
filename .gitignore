@@ -3,8 +3,10 @@
 /dist
 /node_modules
 javascript/node_modules
+javascript/downloads
 python/Lib
 python/Scripts
+
 # Logs
 logs
 *.log
