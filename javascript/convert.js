@@ -30,7 +30,7 @@ const readline = require('readline');
                     ffmpeg.setFfprobePath(ffprobePath);
                     ffmpeg(stream)
                         .audioBitrate(256)
-                        .save(`downloads/m4a/${transTitle}.m4a`)
+                        .save(`download/m4a/${transTitle}.m4a`)
                         .on('end', () => {
                             console.log(`Done! Downloaded ${transTitle}`);
                         }).on('error', (e) => {
