@@ -1,5 +1,7 @@
 import * as fs from 'fs';
-import ytdl from 'ytdl-core';
+// import ytdl from 'ytdl-core';
+// Temporary fix 403 error in ytdl-core
+import ytdl from '@distube/ytdl-core';
 import ffmpeg from 'fluent-ffmpeg';
 import readline from 'readline';
 import { path as ffmpegPath } from '@ffmpeg-installer/ffmpeg';
